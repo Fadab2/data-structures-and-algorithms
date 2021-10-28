@@ -115,18 +115,15 @@ const addNumbers = (num, arr, times, callback) => {
   while (times > 0) {
     times--;
     addValues(arr, num)
-    console.log(times);
-
   }
   return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
-
+ 
 CHALLENGE 6
-
+ 
 Write a function named createList that takes in an array of the current store intentory.
-
+ 
 The inventory is formatted like this:
 [
   { name: 'apples', available: true },
@@ -135,7 +132,7 @@ The inventory is formatted like this:
   { name: 'bananas', available: true },
   { name: 'blueberries', available: false }
 ]
-
+ 
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
@@ -152,15 +149,15 @@ const createList = (availableItems) => {
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
-
+ 
 Write a function named fizzbuzz that takes in an array of numbers.
-
+ 
 Iterate over the array using forEach to determine the output based on several rules:
   - If a number is divisible by 3, add the word "Fizz" to the output array.
   - If the number is divisible by 5, add the word "Buzz" to the output array.
   - If the number is divisible by both 3 and 5, add the phrase "Fizz Buzz" to the output array.
   - Otherwise, add the number to the output array.
-
+ 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
@@ -168,18 +165,20 @@ const fizzbuzz = (arr) => {
   // Solution code here...
   const resultingArray = [];
   arr.forEach((number, index) => {
-    if (number % 3 == 0) {
-      resultingArray[index] = "Fizz";
 
-    }
-    if (number % 5 == 0) {
-      resultingArray[index] = "Buzz";
-    }
     if (number % 3 == 0 && number % 5 == 0) {
       resultingArray[index] = "Fizz Buzz";
     }
+    else if (number % 3 == 0) {
+      resultingArray[index] = "Fizz";
+
+    }
+    else if (number % 5 == 0) {
+      resultingArray[index] = "Buzz";
+    }
+
     else {
-      resultingArray.push(number);
+      resultingArray[index] = number;
     }
 
   });
@@ -189,13 +188,13 @@ const fizzbuzz = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-01.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
