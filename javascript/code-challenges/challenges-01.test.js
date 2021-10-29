@@ -115,8 +115,6 @@ const addNumbers = (num, arr, times, callback) => {
   while (times > 0) {
     times--;
     addValues(arr, num)
-    console.log(times);
-
   }
   return arr;
 };
@@ -238,7 +236,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-describe('Testing challenge 7', () => {
+xdescribe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
