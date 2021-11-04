@@ -135,6 +135,13 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    let name = recipe.ingredients[i].indexOf(' ') + 1;
+    let newItem = recipe.ingredients[i].slice(name);
+    let newIdx = newItem.indexOf(' ') + 1;
+
+    result.push(newItem.slice(newIdx));
+  }
   return result;
 };
 
@@ -292,7 +299,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return a list of foods', () => {
     expect(listFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
     expect(listFoods(gruffaloCrumble).length).toStrictEqual(11);
