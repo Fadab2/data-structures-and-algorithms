@@ -172,17 +172,18 @@ const citiesAtoJ = (arr) => {
   return cities;
 };
 
-/* ------------------------------------------------------------------------------------------------
-CHALLENGE 7 - Stretch Goal
- 
-You have created a game application and begin by asking users an easy question: In which month is Halloween?
- 
-Write a function named matchMonth which uses a regular expression pattern to match any of these inputs: October, Oct, october, oct
- 
-If the user enters any of these four inputs, return true. For any other input, return false.
- 
-Do not use the vertical bar (pipe) in your pattern.
------------------------------------------------------------------------------------------------- */
+/* 
+  /* ------------------------------------------------------------------------------------------------
+  CHALLENGE 7 - Stretch Goal
+   
+  You have created a game application and begin by asking users an easy question: In which month is Halloween?
+   
+  Write a function named matchMonth which uses a regular expression pattern to match any of these inputs: October, Oct, october, oct
+   
+  If the user enters any of these four inputs, return true. For any other input, return false.
+   
+  Do not use the vertical bar (pipe) in your pattern.
+  ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
   // Solution code here...
