@@ -1,5 +1,7 @@
 'use strict';
 
+const { children } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 1 - Review
@@ -56,6 +58,19 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  //console.log(Object.charArray(children));
+  charArray.sort((first, second) => {
+    if (first.children.length > second.children.length) {
+      return 1;
+    } else if (first.children.length < second.children.length) {
+      return -1;
+    } else {
+      return first.name.localeCompare(second.name); // -1, 0, or 1, depending on alphabetical order
+    }
+
+  });
+  return charArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +133,26 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  // Remove all punctuation
+  let pattern = /[^A-Za-z ]/g;
+  str = str.replace(pattern, "");
 
+  // Pattern to find capitalized words
+  pattern = /^[A-Z]/;
+  let returnArray = [];
+  //^A-Z
+  // Split the sentence into an array of words.
+  let splitArray = str.split(" ");
+  // Loop through the array of words
+  for (let word of splitArray) {
+    // Find each word that begins with a capital letter. (REGEX)
+    if (pattern.test(word)) {
+      // Add that word to a new array.
+      returnArray.push(word);
+    }
+
+  }
+  return returnArray;
 }
 
 /* ------------------------------------------------------------------------------------------------
