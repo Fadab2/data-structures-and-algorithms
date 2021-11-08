@@ -154,7 +154,6 @@ const hasChildrenValues = (arr, character) => {
       return (Object.keys(obj).length > 3);
     }
   }
-
   return false
 };
 
