@@ -5,7 +5,10 @@
 ## Table Contents:
 
 [Code Challenge 01](code_challenges/array_reverse/README.md)
+
 [Code Challenge 02](code_challenges/array_reverse/README.md)
+
+[Binary Search](code_challenges/binary-search/README.md)
 
 ### Folder and Challenge Setup
 
