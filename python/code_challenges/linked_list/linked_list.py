@@ -35,7 +35,7 @@ class LinkedList:
         while(current):
             #print(f'{current.value}->')
             nodes = current.value
-            print( "{ "+nodes+ " }" + "-> ")
+            print( "{ "+nodes+ " }" + "-> ", end="")
             current = current.next
         #return  print(f'{nodes}-> NULL')
         print("NULL")
