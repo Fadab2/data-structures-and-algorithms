@@ -40,13 +40,35 @@ def test_insert_before_value_exist():
     expected = "Error: the node with specified value is not in the linked list"
     assert actual == expected
 
-# # Can successfully insert a node before the first node of a linked list
-# def test_insert_before_value_not_in_list():
-#     ll = LinkedList()
-#     ll.append('1')
-#     ll.append('3')
-#     ll.append('2')
-#     ll.insert_before('1','5')
-#     acutal =  ll.__str__()
-#     expected = " { 5 } -> { 1 } -> { 3 } -> { 2 } -> NULL"
-#     assert acutal == expected
+# Can successfully insert a node before the first node of a linked list
+def test_insert_before_first_node_in_list():
+    ll = LinkedList()
+    ll.append('1')
+    ll.append('3')
+    ll.append('2')
+    ll.insert_before('1','5')
+    acutal =  ll.__str__()
+    expected = " { 5 } -> { 1 } -> { 3 } -> { 2 } -> NULL"
+    assert acutal == expected
+
+# Can successfully insert after a node in the middle of the linked list
+def test_insert_after_node_in_list():
+    ll = LinkedList()
+    ll.append('1')
+    ll.append('2')
+    ll.append('2')
+    ll.insert_after('2','5')
+    acutal =  ll.__str__()
+    expected = " { 1 } -> { 2 } -> { 5 } -> { 2 } -> NULL"
+    assert acutal == expected
+
+# Can successfully insert a node after the last node of the linked list
+def test_insert_at_end_of_list():
+    ll = LinkedList()
+    ll.append('1')
+    ll.append('2')
+    ll.append('3')
+    ll.insert_after('3','4')
+    acutal =  ll.__str__()
+    expected = " { 1 } -> { 2 } -> { 3 } -> { 4 } -> NULL"
+    assert acutal == expected

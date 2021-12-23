@@ -68,10 +68,13 @@ class LinkedList:
     def insert_before(self, value, newValue):
             current = self.head
             newNode = Node(newValue)
-            previous = None
             if(self.head is None):
                 self.head = newNode
                 return
+            elif (self.head.value == value):
+                # if the value is of the head node then call the insert method which adds elements to the beginnig of the linked list
+                 self.insert(newNode.value)
+                 return
             elif (current.value == value):
                 newNode.next = current
                 current.next = newNode
@@ -91,15 +94,17 @@ class LinkedList:
     else traverse the list until you find the specified value then insert the new node after it.
     '''
     def insert_after(self, value, newValue):
+                if not value:
+                    return ("Error: the node with specified value is not in the linked list")
                 current = self.head
+                newNode = Node(newValue)
                 while (current):
                     if(current.value == value):
-                        newNode = Node(newValue)
-                        newNode.next = current.next.next
+                        newNode.next = current.next
                         current.next = newNode
                         return
                     current = current.next
-                return ("Error: the node with specified value is not in the linked list")
+
 
 linked_list = LinkedList()
 linked_list.insert('1')
@@ -107,7 +112,7 @@ linked_list.insert('2')
 linked_list.insert('3')
 linked_list.includes('4')
 linked_list.append('5')
-linked_list.insert_before('5','6')
-linked_list.insert_after(2, 11)
-
+linked_list.insert_before('3','6')
+linked_list.insert_after(50, 11)
+print(linked_list.head.value)
 print(linked_list.__str__())
