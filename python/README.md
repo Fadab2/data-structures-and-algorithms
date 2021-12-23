@@ -10,6 +10,10 @@
 
 [Binary Search](code_challenges/binary-search/README.md)
 
+[Linked List](code_challenges/linked_list/README.md)
+
+[Linked List Insertion](code_challenges/linked_list_insertions/README.md)
+
 ### Folder and Challenge Setup
 
 Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.
