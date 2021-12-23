@@ -30,15 +30,18 @@ class LinkedList:
 
     # method to return a string representation for the linked list nodes
     def __str__(self):
-        nodes = " "
+        if self.head is None:
+            print("Empty linked list")
+            return
+
         current = self.head
+        nodes = " "
+
         while(current):
-            #print(f'{current.value}->')
-            nodes = current.value
-            print( "{ "+nodes+ " }" + "-> ", end="")
+            nodes += (f'{{ {current.value} }} -> ')
             current = current.next
-        #return  print(f'{nodes}-> NULL')
-        print("NULL")
+        nodes = (f'{nodes}NULL')
+        return nodes
 
     '''
     a method to append a node with a given value at the end of the linked list
@@ -48,24 +51,63 @@ class LinkedList:
     '''
     def append(self, value):
         newNode = Node(value)
-        if(self.head is not None):
+        if(self.head is None):
             self.head = newNode
             return
-        current = self.head
-        while (current.next is not None):
-            current = current.next
+        else:
+            current = self.head
+            while (current.next):
+                current = current.next
             current.next = newNode
 
+    '''
+    a method to insert a node with a given value before another node of the linked list
+    If the linked list is empty set the new node to be the head, if the value doesn't exist return an error.
+    else traverse the list as until you find the specified value then insert the new node before it.
+    '''
+    def insert_before(self, value, newValue):
+            current = self.head
+            newNode = Node(newValue)
+            previous = None
+            if(self.head is None):
+                self.head = newNode
+                return
+            elif (current.value == value):
+                newNode.next = current
+                current.next = newNode
+            else:
+                while (current.next):
+                    if(current.next.value == value):
 
+                        newNode.next = current.next
+                        current.next = newNode
+                        return
+                    current = current.next
 
-
+                return ("Error: the node with specified value is not in the linked list")
+    '''
+    a method to insert a node with a given value after another specific node's value of the linked list
+    If the linked list is empty set the new node to be the head, if the value doesn't exist return an error.
+    else traverse the list until you find the specified value then insert the new node after it.
+    '''
+    def insert_after(self, value, newValue):
+                current = self.head
+                while (current):
+                    if(current.value == value):
+                        newNode = Node(newValue)
+                        newNode.next = current.next.next
+                        current.next = newNode
+                        return
+                    current = current.next
+                return ("Error: the node with specified value is not in the linked list")
 
 linked_list = LinkedList()
-linked_list.insert('a')
-linked_list.insert('b')
-linked_list.insert('c')
-linked_list.includes('a')
-linked_list.append('d')
+linked_list.insert('1')
+linked_list.insert('2')
+linked_list.insert('3')
+linked_list.includes('4')
+linked_list.append('5')
+linked_list.insert_before('5','6')
+linked_list.insert_after(2, 11)
 
-
-linked_list.__str__()
+print(linked_list.__str__())
