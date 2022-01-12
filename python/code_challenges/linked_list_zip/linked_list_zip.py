@@ -131,33 +131,46 @@ class LinkedList:
 
     def zip_lists(self, ll1, ll2):
         #Set current for each ll to it's head
+        ll3 = LinkedList()
         current_ll1 = ll1.head
-
         current_ll2 = ll2.head
-        # traverse through each linked list as long as neither has a value of None
-        while current_ll1 != None and current_ll2 != None:
-            # Save the current next values of each list
-            next_ll1 = current_ll1.next
-            next_ll2 = current_ll2.next
+        while current_ll1 or current_ll2:
 
-            #swap the ll2 next to the next of next f ll1 while setting the next of ll1 to the current value of ll2
-            current_ll2.next = next_ll1
-            current_ll1.next = current_ll2
+            if current_ll1:
+                ll3.append(current_ll1.value)
+                current_ll1 = current_ll1.next
 
-            # Adjust current for the next loop
+            if current_ll2:
+                ll3.append(current_ll2.value)
+                current_ll2 = current_ll2.next
+        return ll3
+        # # traverse through each linked list as long as neither has a value of None
+        # while current_ll1 != None and current_ll2 != None:
+        #     # Save the current next values of each list
+        #     next_ll1 = current_ll1.next
+        #     next_ll2 = current_ll2.next
 
-            current_ll1 = next_ll1
-            current_ll2 = next_ll2
-            ll2.head = current_ll2
+        #     #swap the ll2 next to the next of next f ll1 while setting the next of ll1 to the current value of ll2
+        #     current_ll2.next = next_ll1
+        #     current_ll1.next = current_ll2
+
+        #     # Adjust current for the next loop
+
+        #     current_ll1 = next_ll1
+        #     current_ll2 = next_ll2
+        #     ll2.head = current_ll2
 
 
-linked_list = LinkedList()
-linked_list.insert('1')
-linked_list.insert('2')
-linked_list.insert('3')
-linked_list.includes('4')
-linked_list.append('5')
-linked_list.insert_before('3','6')
-linked_list.insert_after(50, 11)
-print(linked_list.head.value)
-print(linked_list.__str__())
+ll1 = LinkedList()
+ll1.insert(1)
+ll1.insert(3)
+ll1.insert(2)
+ll1.insert(6)
+ll1.insert(7)
+ll2 = LinkedList()
+ll2.insert(5)
+ll2.insert(9)
+ll2.insert(4)
+ll3 = LinkedList()
+print(ll3.zip_lists(ll1, ll2))
+#print(ll1.__str__())
