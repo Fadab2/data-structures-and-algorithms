@@ -15,7 +15,7 @@ adds a new node with the given new value immediately after the first node that h
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![whiteboard](../code_challenges/linked_list_insertions/linked-list-insertions.png)
+![whiteboard](../linked_list_insertions/linked-list-insertions.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
