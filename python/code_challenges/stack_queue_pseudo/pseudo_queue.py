@@ -46,7 +46,7 @@ if __name__ == "__main__":
     que.enqueue(15)
     que.enqueue(20)
     que.enqueue(20)
-
+    que.dequeue()
 
     que.__str__()
 
