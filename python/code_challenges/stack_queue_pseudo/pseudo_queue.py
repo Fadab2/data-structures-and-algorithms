@@ -1,6 +1,4 @@
 
-from inspect import stack
-
 from black import re
 from code_challenges.stack_and_queue.stack import Stack
 
