@@ -1,9 +1,4 @@
 from code_challenges.stack_queue_pseudo.pseudo_queue import PseudoQueue
-import pytest
-
-# Can successfully enqueue into a queue
-# @pytest.mark.skip(reason="")
-
 
 def test_enqueue_into_queue():
     que1 = PseudoQueue()
