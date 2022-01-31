@@ -4,6 +4,8 @@ from code_challenges.trees.binary_trees import BinaryTree
 from code_challenges.trees.node import Node
 
 class BinarySearchTree(BinaryTree):
+    def __init__(self, root=None):
+        super().__init__(root)
 
     def add(self, value):
 
@@ -11,21 +13,21 @@ class BinarySearchTree(BinaryTree):
             new_node = Node(value)
             if self.root is None:
                 self.root = new_node
+                return
 
-            if root.value < value:
+            if root.value < new_node.value:
                 if root.right:
                     find_and_add(root.right, value)
                 else:
                     root.right = new_node
 
-            if self.root > value:
+            if self.root > new_node.value:
                 if root.left:
                     find_and_add(root.left, value)
                 else:
                     root.left = new_node
-            else:
-                find_and_add(self.root, value)
 
+            find_and_add(self.root, value)
 
 
     def contains(self, value):
@@ -46,3 +48,15 @@ class BinarySearchTree(BinaryTree):
 
         return False
 
+
+if __name__ == "__main__":
+   bst = BinarySearchTree(Node(50))
+   bst.add(Node(40))
+   bst.add(Node(30))
+   bst.add(Node(45))
+   bst.add(Node(60))
+   bst.add(Node(55))
+   bst.add(Node(70))
+
+
+   print(bst.post_order)

@@ -86,7 +86,7 @@ def test_traverse_post_order():
     order_list = bt.post_order()
     assert order_list == ['portland', 'vancouver', 'seattle']
 
-@pytest.mark.skip(reason="")
+#@pytest.mark.skip(reason="")
 def test_binary_search_tree_add():
     # add 50, 40,60,30,55,70,45
     #              50
