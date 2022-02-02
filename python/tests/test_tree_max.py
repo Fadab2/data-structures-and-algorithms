@@ -2,6 +2,7 @@ import pytest
 from code_challenges.trees.node import Node
 from code_challenges.trees.binary_trees import BinaryTree
 from code_challenges.trees.binary_search_tree import BinarySearchTree
+from code_challenges.tree_max.binary_search_tree import BinarySearchTree
 
 
 @pytest.mark.skip(reason="")

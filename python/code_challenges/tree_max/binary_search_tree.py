@@ -29,16 +29,20 @@ class BinarySearchTree(BinaryTree):
 
     def contains(self, value):
 
-        if self.root is None:
-            return False
-        if self.root.value == value:
-            return True
+        def find_value(root, value):
+            if root is None:
+                return False
+            if root.value == value:
+                return True
 
-        if value < self.root.value:
-            return contains(self.root.left, value)
-        else:
-            return contains(self.root.right, value)
-            #return contains(self.root, value)
+            if value < root.value:
+                return find_value(root.left, value)
+
+            if value > root.value:
+                return find_value(root.right, value)
+
+        return find_value(self.root, value)
+
 
     def find_maximum_value(self):
 
@@ -57,7 +61,7 @@ class BinarySearchTree(BinaryTree):
                 _max = right_num
 
             return _max
-            
+
 
 # if __name__ == "__main__":
 #    bst = BinarySearchTree(Node(50))
