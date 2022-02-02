@@ -1,3 +1,4 @@
+from operator import contains
 import pytest
 from code_challenges.trees.node import Node
 from code_challenges.trees.binary_trees import BinaryTree
@@ -86,8 +87,8 @@ def test_traverse_post_order():
     order_list = bt.post_order()
     assert order_list == ['portland', 'vancouver', 'seattle']
 
-@pytest.mark.skip(reason="")
-def test_binary_search_tree_add():
+#@pytest.mark.skip(reason="")
+def test_binary_search_tree_pre_order():
     # add 50, 40,60,30,55,70,45
     #              50
     #           /      \
@@ -96,13 +97,55 @@ def test_binary_search_tree_add():
     #     30     45     55   70
     #
 
-    bst = BinarySearchTree(Node(50))
-    bst.add(Node(40))
-    bst.add(Node(30))
-    bst.add(Node(45))
-    bst.add(Node(60))
-    bst.add(Node(55))
-    bst.add(Node(70))
+    bst = BinarySearchTree()
+    bst.add(50)
+    bst.add(40)
+    bst.add(30)
+    bst.add(45)
+    bst.add(60)
+    bst.add(55)
+    bst.add(70)
 
     order_list = bst.pre_order()
     assert order_list == [50,40,30,45,60,55,70]
+
+
+def test_binary_search_tree_in_order():
+    bst = BinarySearchTree()
+    bst.add(50)
+    bst.add(40)
+    bst.add(30)
+    bst.add(45)
+    bst.add(60)
+    bst.add(55)
+    bst.add(70)
+
+    order_list = bst.in_order()
+    assert order_list == [30,40,45,50,55,60,70]
+
+
+def test_binary_search_tree_post_order():
+    bst = BinarySearchTree()
+    bst.add(50)
+    bst.add(40)
+    bst.add(30)
+    bst.add(45)
+    bst.add(60)
+    bst.add(55)
+    bst.add(70)
+
+    order_list = bst.post_order()
+    assert order_list == [30,45,40,55,70,60,50]
+
+
+def test_binary_search_tree_contains():
+    bst = BinarySearchTree()
+    bst.add(50)
+    bst.add(40)
+    bst.add(30)
+    bst.add(45)
+    bst.add(60)
+    bst.add(55)
+    bst.add(70)
+
+    assert bst.contains(50) == True
