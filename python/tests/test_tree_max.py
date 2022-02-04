@@ -53,7 +53,7 @@ def test_find_max__when_right_child():
     assert max_value == 70
 
 
-@pytest.mark.skip(reason="")
+#@pytest.mark.skip(reason="")
 def test_find_max_when_two_max_numbers():
     bst = BinarySearchTree(3)
     node1 = Node(3)

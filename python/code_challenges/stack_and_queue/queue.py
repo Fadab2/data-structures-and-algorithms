@@ -17,7 +17,6 @@ class Queue:
             self.rear.next = new_node
             self.rear = new_node
 
-
     def dequeue(self):
         if self.isEmpty():
             print("Queue is empty")
@@ -32,17 +31,15 @@ class Queue:
         else:
             return self.front.value
 
-
     def isEmpty(self):
         if self.front == None:
             return True
 
         return False
 
-
     def __str__(self):
         if self.isEmpty():
-             print("Queue is empty")
+            print("Queue is empty")
 
         else:
             current = self.front
@@ -72,6 +69,3 @@ if __name__ == "__main__":
 
     print(que1.peek())
     print(que1.__str__())
-
-
-
