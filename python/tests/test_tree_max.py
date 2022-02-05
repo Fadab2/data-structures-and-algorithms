@@ -5,7 +5,7 @@ from code_challenges.trees.binary_search_tree import BinarySearchTree
 from code_challenges.tree_max.binary_search_tree import BinarySearchTree
 
 
-@pytest.mark.skip(reason="")
+#@pytest.mark.skip(reason="")
 def test_find_max_when_empty():
     bst = BinarySearchTree()
     assert bst.find_maximum_value() == 0
