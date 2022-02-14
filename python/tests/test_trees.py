@@ -138,7 +138,7 @@ def test_binary_search_tree_post_order():
     assert order_list == [30,45,40,55,70,60,50]
 
 
-def test_binary_search_tree_contains():
+def test_binary_search_tree_contains_root():
     bst = BinarySearchTree()
     bst.add(50)
     bst.add(40)
@@ -149,3 +149,26 @@ def test_binary_search_tree_contains():
     bst.add(70)
 
     assert bst.contains(50) == True
+
+def test_binary_search_tree_contains_left_leaf():
+    bst = BinarySearchTree()
+    bst.add(50)
+    bst.add(40)
+    bst.add(30)
+    bst.add(45)
+    bst.add(60)
+    bst.add(55)
+    bst.add(70)
+    assert bst.contains(45) == True
+
+
+def test_binary_search_tree_contains_right_leaf():
+    bst = BinarySearchTree()
+    bst.add(50)
+    bst.add(40)
+    bst.add(30)
+    bst.add(45)
+    bst.add(60)
+    bst.add(55)
+    bst.add(70)
+    assert bst.contains(70) == True

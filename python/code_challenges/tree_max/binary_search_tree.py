@@ -6,6 +6,7 @@ from code_challenges.trees.node import Node
 class BinarySearchTree(BinaryTree):
     def __init__(self, root=None):
          self.root = root
+         self._max = 0
 
 
     def add(self, value):
@@ -44,36 +45,26 @@ class BinarySearchTree(BinaryTree):
         return find_value(self.root, value)
 
 
-# if __name__ == "__main__":
-#    bst = BinarySearchTree(Node(50))
-#    bst.add(Node(40))
-#    bst.add(Node(30))
-#    bst.add(Node(45))
-#    bst.add(Node(60))
-#    bst.add(Node(55))
-#    bst.add(Node(70))
+    def find_maximum_value(self):
+        max_num = 0
+        def find_max(root, max_num):
+
+            if root == None:
+                return max_num
+            # if _max < root.value:
+            #     _max = root.value
+            # find_max(root.left)
 
 
-#    print(bst.post_order)
+            if max_num < root.value:
+                max_num = root.value
+            find_max(root.left, max_num)
 
-#  def add(self, value):
+            if self._max < root.value:
+                max_num = root.value
+            find_max(root.right, max_num)
 
-#         def find_and_add(root, value):
-#             new_node = Node(value)
-#             if self.root is None:
-#                 self.root = new_node
-#                 #return
+            return max_num
 
-#             if root.value < new_node.value:
-#                 if root.right:
-#                     find_and_add(root.right, value)
-#                 else:
-#                     root.right = new_node
+        return find_max(self.root, max_num)
 
-#             if self.root > new_node.value:
-#                 if root.left:
-#                     find_and_add(root.left, value)
-#                 else:
-#                     root.left = new_node
-
-#             find_and_add(self.root, value)
