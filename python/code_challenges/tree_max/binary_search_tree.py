@@ -6,6 +6,7 @@ from code_challenges.trees.node import Node
 class BinarySearchTree(BinaryTree):
     def __init__(self, root=None):
          self.root = root
+         self._max = 0
 
 
     def add(self, value):
@@ -45,22 +46,34 @@ class BinarySearchTree(BinaryTree):
 
 
     def find_maximum_value(self):
+        max_num = 0
+        def find_max(root, max_num):
 
+         tree-breadth-first
         def find_max(root, _max=0):
             max_node = Node(_max)
+
             if root == None:
-                return _max
-            if _max < root.value:
-                _max = root.value
-            left_num = find_max(root.left, _max)
-            if _max < left_num:
-                _max = left_num
+                return max_num
+            # if _max < root.value:
+            #     _max = root.value
+            # find_max(root.left)
 
-            right_num = find_max(root.right, _max)
-            if _max < right_num:
-                _max = right_num
-
+       tree-breadth-first
                 return _max
 
         return find_max(self.root)
+
+            if max_num < root.value:
+                max_num = root.value
+            find_max(root.left, max_num)
+
+            if self._max < root.value:
+                max_num = root.value
+            find_max(root.right, max_num)
+
+            return max_num
+
+        return find_max(self.root, max_num)
+
 
