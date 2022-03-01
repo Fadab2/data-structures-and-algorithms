@@ -17,15 +17,15 @@ class K_AryTree():
 
             if root.value % 3 == 0 and root.value % 5 == 0:
                 node =  Node("FizzBuzz")
+                output.children.append(node)
             elif root.value % 3 == 0:
                 node = Node("Fizz")
+                output.children.append(node)
             elif root.value % 5 == 0:
                 node = Node("Buzz")
+                output.children.append(node)
             else:
                 node = Node(str(root.value))
-
-
-            node.children = [walk(  child) for child in root.children]
 
             return node
 
