@@ -49,12 +49,20 @@ class BinarySearchTree(BinaryTree):
         max_num = 0
         def find_max(root, max_num):
 
+         tree-breadth-first
+        def find_max(root, _max=0):
+            max_node = Node(_max)
+
             if root == None:
                 return max_num
             # if _max < root.value:
             #     _max = root.value
             # find_max(root.left)
 
+       tree-breadth-first
+                return _max
+
+        return find_max(self.root)
 
             if max_num < root.value:
                 max_num = root.value
@@ -67,4 +75,5 @@ class BinarySearchTree(BinaryTree):
             return max_num
 
         return find_max(self.root, max_num)
+
 
