@@ -7,9 +7,9 @@ def repeated_word(words):
     for word in words:
         if word in count:
             print(word)
-        # else:
-        #     counter = counter + 1
-        #     count[word] = counter
+        else:
+            counter = counter + 1
+            count[word] = counter
 
 
 if __name__ == "__main__":

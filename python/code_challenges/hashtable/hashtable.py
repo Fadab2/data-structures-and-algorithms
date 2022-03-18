@@ -47,10 +47,11 @@ class HashTable():
         return self.all_keys
 
 
-# if __name__ == "__main__":
-#     hashed = HashTable()
-#     hashed.set('Cat', "Weo Weo")
-#     print(hashed.hash('aCt'))
-#     print(hashed.hash('international'))
-#     print(hashed.contains('aCt'))
-#     print(hashed.keys())
+if __name__ == "__main__":
+    hashed = HashTable()
+    hashed.set('Cat', "Weo Weo")
+    print(hashed.hash('8'))
+    print(hashed.hash('8'))
+   # print(hashed.hash('international'))
+    print(hashed.contains('aCt'))
+    print(hashed.keys())
