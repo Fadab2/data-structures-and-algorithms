@@ -1,4 +1,4 @@
-from code_challenges.merge_sort.insertion_sort import merge_sort
+from code_challenges.merge_sort.merge_sort import merge_sort
 
 
 def test_sort_assignment_input():

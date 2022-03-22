@@ -12,6 +12,6 @@ def repeated_word(words):
             count[word] = counter
 
 
-if __name__ == "__main__":
-    words = "Once upon a time, there was a brave princess who..."
-    print(repeated_word(words))
+# if __name__ == "__main__":
+#     words = "Once upon a time, there was a brave princess who..."
+#     print(repeated_word(words))
