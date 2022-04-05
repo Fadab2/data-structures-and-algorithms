@@ -1,5 +1,4 @@
 import pytest
-
 from code_challenges.graph.graph import Graph
 
 
