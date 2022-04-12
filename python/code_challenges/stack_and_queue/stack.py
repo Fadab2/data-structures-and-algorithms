@@ -1,5 +1,5 @@
 
-from code_challenges.stack_and_queue.node import Node
+from stack_and_queue.node import Node
 
 class Stack:
     def __init__(self, top=None):

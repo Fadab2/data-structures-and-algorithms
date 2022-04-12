@@ -1,3 +1,4 @@
+from stack_and_queue.stack import Stack
 from stack_and_queue.queue import Queue
 from graph_breadth_first.graph_breadth_first import Graph
 
@@ -48,6 +49,22 @@ class Graph:
 
             return nodes
 
+    def depth_first(self, root):
+        stack = Stack()
+        node = stack.push(root)
+        visited = set()
+        visited.add(root)
+        while stack not in self.isEmpty():
+             node = stack.peek()
+             visited.add(node)
+             stack.push(node)
+             neighbors = self.get_neighbors(node)
+             for child in neighbors:
+                if child not in visited:
+                    visited.add(node)
+                    stack.push(node)
+
+        return visited
 
 class Vertex:
     def __init__(self, value):
@@ -68,13 +85,14 @@ class Edge:
 
 if __name__ == "__main__":
     graph = Graph()
-    A = graph.add_node("A")
-    B = graph.add_node("B")
-    C = graph.add_node("C")
-    D = graph.add_node("D")
+    graph.add_node("A")
+    graph.add_node("B")
+    graph.add_node("C")
+    graph.add_node("G")
+    graph.add_node("D")
+    graph.add_node("E")
     print(graph.get_nodes())
-    nieghbor = graph.add_edge(A, B, 3)
-    print(len(nieghbor))
+
     # graph.add_node("C")
     # graph.add_edge(A, B, 3)
     # print(graph.__repr__())
